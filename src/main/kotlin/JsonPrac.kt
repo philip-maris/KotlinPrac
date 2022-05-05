@@ -27,7 +27,7 @@ fun main(){
     for(i in newPeople) println(i)
 }*/
 
-
+data class WatchMan(var movie :Movie)
 data class Movie(var name: String, var watchDate: String,var provider: String ,var seriesNo: Int,var episodeNo: String)
 
 fun main (){
@@ -35,5 +35,9 @@ fun main (){
     val gson = Gson()
 
     val movieList: Array<Movie> = gson.fromJson(FileReader("./src/main/resources/Prac.json"), Array<Movie>::class.java)
-   for (movie in movieList) println("\n $movie")
+//   for (movie in movieList) println("\n $movie")
+
+    val watchMan = WatchMan(movieList[2])
+    println("watchMan movie name = " + watchMan.movie.name)
 }
+
