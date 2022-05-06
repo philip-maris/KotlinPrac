@@ -25,6 +25,12 @@
     "provider": "Amazon Video",
     "seriesNo": "4",
     "episodeNo": "1"
-
+  },
+  {
+    "name": "Dr Strange",
+    "watchDate": "8.5.2012",
+    "provider": "Marvel",
+    "seriesNo": "1",
+    "episodeNo": "2"
   }
 ]
