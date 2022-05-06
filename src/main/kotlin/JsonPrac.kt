@@ -28,16 +28,24 @@ fun main(){
 }*/
 
 data class WatchMan(var movie :Movie)
-data class Movie(var name: String, var watchDate: String,var provider: String ,var seriesNo: Int,var episodeNo: String)
+data class MovieSeries(var name: String, var watchDate: String,var provider: String ,var seriesNo: Int,var episodeNo: String)
+data class Movie(var name: String, var watchDate: String,var provider: String)
 
 fun main (){
 
     val gson = Gson()
 
-    val movieList: Array<Movie> = gson.fromJson(FileReader("./src/main/resources/Prac.json"), Array<Movie>::class.java)
-//   for (movie in movieList) println("\n $movie")
+    val seriesList: Array<MovieSeries> = gson.fromJson(FileReader("./src/main/resources/Prac.json"), Array<MovieSeries>::class.java)
+    val movieList: Array<Movie> = gson.fromJson(gson.toJson(seriesList), Array<Movie>::class.java)
 
-    val watchMan = WatchMan(movieList[2])
-    println("watchMan movie name = " + watchMan.movie.name)
+    for (movie in movieList) println("\n $movie");
+
+
+        for (movie in seriesList) println("\n $movie")
+
+
+
+  /*  val watchMan = WatchMan(movieList[2])
+    println("watchMan movie name = " + watchMan.movie.name)*/
 }
 
