@@ -5,26 +5,26 @@ import java.sql.ResultSet
 import java.sql.Statement
 import javax.sql.DataSource
 
+interface DatabaseActions{
+    fun addStudent()
+    fun retrieveStudents()
+    fun updateStudent(s : Student)
+    fun deleteStudent(s : Student)
+}
 
-class Dao {
+
+class Dao (connection : DbConnection ): DatabaseActions {
 
 
 //  connection pool?
 //    var bs : DataSource = DataSource
-    private val connection = DbConnection()
+//    private val connection = DbConnection()
     var stmt = connection.statement
     var rs = connection.resultSet
     
     private val gson = Gson()
 
-    fun addStudent() {
-  /*      try {
-            val addQuery = " INSERT INTO `student` (`firstname`, `lastname`,`age`) VALUES (\"${student.firstName}\",\"${student.lastName}\",${student.age});"
-           stmt!!.executeUpdate(addQuery)
-            println("added ${student.firstName}")
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }*/
+    override fun addStudent() {
 
         try {
             println("Enter details in this formart => firstname lastname age")
@@ -37,7 +37,7 @@ class Dao {
         }
     }
 
-    fun retrieveStudents() {
+    override fun retrieveStudents() {
         try {
             //what's the use of this statement
             val viewQuery = " SELECT * FROM student;"
@@ -65,7 +65,7 @@ class Dao {
         }
     }
 
-    fun deleteStudent(student: Student) {
+    override fun deleteStudent(student: Student) {
         println(" Enter the first name of the student ")
         var name = readLine()
         val deleteQuery = "DELETE FROM student WHERE (firstName = \"$name\");"
@@ -77,7 +77,7 @@ class Dao {
 
     }
 
-    fun updateStudent(student: Student) {
+    override  fun updateStudent(student: Student) {
 
   /*      print("Enter firstname of the student to be updated : ")
         var firstname = readLine()

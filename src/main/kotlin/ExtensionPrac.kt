@@ -1,14 +1,12 @@
-/*
+
 fun main() {
     
-    val string = "the day"
-    string.separateLetters()
+    var p = Person("john" , 12 ,"UI")
+    println(p.toString())
+    p.apply{this.age = 31}
+    println(p.toString())
+
 }
 
-fun String.separateLetters(){
+data class Person(var name : String,var age : Int,var school : String)
 
-    for( i in this){
-        println(i)
-    }
-
-}*/

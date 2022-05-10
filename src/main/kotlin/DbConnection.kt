@@ -12,8 +12,6 @@ class DbConnection : Closeable {
     private val password = "12345"
 
     var statement: Statement? = null
-    var preparedStatement: PreparedStatement? = null
-
     var resultSet : ResultSet? = null
 
     init {
@@ -26,7 +24,7 @@ class DbConnection : Closeable {
             conn = DriverManager.getConnection(url, connectionProps)
             println("connected")
             statement = conn!!.createStatement()
-//            preparedStatement = conn!!.createStatement() as PreparedStatement
+
 
         } catch (e: Exception) {
             println(" not connected")

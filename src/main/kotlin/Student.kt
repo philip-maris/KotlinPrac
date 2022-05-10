@@ -3,14 +3,11 @@ import java.io.FileReader
 data class Student (var firstName :String, var lastName :String, var age :Int)
 
 fun main(){
-    val dao = Dao()
+    val connection = DbConnection()
+    val dao = Dao(connection)
 
     val s1 = Student("The " ,"Boy" , 12)
     val s3 = Student("frank " ,"oceans" , 12)
-
-/*    dao.addStudent(s1)
-    dao.addStudent()
-    dao.retrieveStudents()*/
 
 while (true){
     when(action())  {
