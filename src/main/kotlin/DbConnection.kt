@@ -1,8 +1,9 @@
+import java.io.Closeable
 import java.sql.*
 import java.util.*
 
 
-class DbConnection {
+class DbConnection : Closeable {
 
      var conn: Connection? = null
     private val user = "root"
@@ -32,5 +33,9 @@ class DbConnection {
             e.printStackTrace()
         }
 
+    }
+
+    override fun close() {
+        conn!!.close()
     }
 }

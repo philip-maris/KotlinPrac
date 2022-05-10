@@ -35,7 +35,7 @@ fun action(): Int {
     println("2 => Add student")
     println("3 => Edit student")
     println("4 => Delete student")
-    println("5 => EXIT")
+    println("5 => EXIT\n::")
 
     return readLine()!!.toInt()
 }
