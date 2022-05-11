@@ -1,3 +1,4 @@
+/*
 import com.google.gson.Gson
 import java.io.FileReader
 
@@ -30,3 +31,4 @@ fun main(){
     val gson = Gson()
     val details = gson.fromJson(FileReader("./src/main/resources/Hospital.json"), CheckUpDetails ::class.java)
 }
+*/

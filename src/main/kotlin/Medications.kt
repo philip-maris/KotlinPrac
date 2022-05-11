@@ -1,3 +1,4 @@
+/*
 data class Medications(
     var antianginal : Array<DrugType>,
     var anticoagulants : Array<DrugType>,
@@ -32,3 +33,4 @@ data class Medications(
         return result
     }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 interface Shape{
     fun draw()
 }
@@ -25,4 +26,4 @@ var t = Triangle()
     drawService(c)
     drawService(t)
 
-}
+}*/

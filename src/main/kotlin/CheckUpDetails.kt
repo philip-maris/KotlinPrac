@@ -1,3 +1,4 @@
+/*
 data class CheckUpDetails(
     var medications : Array<Medications>,
     var labs : Array<Labs> ,
@@ -24,3 +25,4 @@ data class CheckUpDetails(
         return result
     }
 }
+*/

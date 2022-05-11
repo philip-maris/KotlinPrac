@@ -1,3 +1,4 @@
+/*
 
 fun main() {
     
@@ -10,3 +11,4 @@ fun main() {
 
 data class Person(var name : String,var age : Int,var school : String)
 
+*/
